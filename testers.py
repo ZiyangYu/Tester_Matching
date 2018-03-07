@@ -9,27 +9,30 @@ with open('testers.csv') as csvfile:
 	size = len(testers)
 
 
-def getTesterbyID(ID):
-	i = 0
+def getTesterByID(ID):
 	for tester in testers:
-		if(ID == int(testers[i][0])):
-			return testers[i]
-		else:
-			i += 1
+		if(ID == int(tester[0])):
+			return tester
 	return 'ERROR: NO TESTER FOUND'
 
-def getTesterNamebyID(ID):
+def getTesterNameByID(ID):
 	name = ['First Name', 'Last Name']
-	i = 0
 	for tester in testers:
-		if(ID == int(testers[i][0])):
-			name[0] = testers[i][1]
-			name[1] = testers[i][2]
+		if(ID == int(tester[0])):
+			name[0] = tester[1]
+			name[1] = tester[2]
 			return name
-		else:
-			i += 1
 	return 'ERROR: NO TESTER NAME FOUND'
 
+def getCountryByTesterID(ID):
+	i = 0
+	for tester in  testers:
+		if(ID == int(tester[0])):
+			return tester[3]
+		else:
+			i += 1
 
-print(getTesterbyID(8))
-print(getTesterNamebyID(8))
+
+#print(getTesterByID(8))
+#print(getTesterNameByID(8))
+#print(getCountryByTesterID(8))

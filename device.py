@@ -6,7 +6,7 @@ with open('devices.csv') as csvfile:
 	devices = list(deviceReader)
 	size = len(devices)
 
-def getDeviceIDbyDescrip(description):
+def getDeviceIDByDescrip(description):
 	i = 0
 	for device in devices:
 		if(description == devices[i][1]):
@@ -15,4 +15,4 @@ def getDeviceIDbyDescrip(description):
 			i+=1
 	return 'ERROR: NO DEVICE FOUND'
 
-print(getDeviceIDbyDescrip('iPhone 5'))
+print(getDeviceIDByDescrip('iPhone 5'))
