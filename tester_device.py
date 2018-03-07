@@ -1,6 +1,7 @@
 import os
 import csv
 
+#parsing the csv file
 with open('tester_device.csv') as csvfile:
 	tester_deviceReader = csv.reader(csvfile)
 	#pop the first row of table entries, remaining pure data
