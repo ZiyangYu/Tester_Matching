@@ -47,13 +47,17 @@ def runTest_Matcher(Countries, Devices):
 	print('Results: ')
 	print(' ')
 	print('Total number of bugs that match with given criteria: \n')
+
 	#get a list of all the testers' id
 	lTesterIDs = testers.getListOfTesterID()
 	print(len(matchedBugs))
+
 	#the original result, unsorted
 	Results = {}
 	for ID in lTesterIDs:
-		Results[ID] = getNumberOfBugsByTesterID(ID, matchedBugs)
+		tNum = getNumberOfBugsByTesterID(ID, matchedBugs)
+		Results[ID] = tNum
+
 	#the sorted result
 	sorted_Result = {}
 	sorted_List = sorted(Results.values(), reverse=True)
@@ -70,11 +74,12 @@ def runTest_Matcher(Countries, Devices):
 	for key, value in sorted_Result.items():
 		#get tester's name
 		name = testers.getTesterNameByID(key)
-		print(name[0] + ' '+ name[1] +' => '+ str(value))
+		print(name[0] + ' '+ name[1] +' => '+ str(value))	
 
-	return sorted_Result	
-
+	print(' ')
 	print('************************************************')	
+	print(' ')
+	return sorted_Result
 
 #==============================================================
 #The Beginning of the program
