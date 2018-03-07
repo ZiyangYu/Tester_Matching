@@ -8,6 +8,12 @@ with open('testers.csv') as csvfile:
 	testers.pop(0)
 	size = len(testers)
 
+def getListOfTesterID():
+	testerID = []
+	for tester in testers:
+		testerID.append(int(tester[0]))
+	return testerID
+
 
 def getTesterByID(ID):
 	for tester in testers:
@@ -25,14 +31,11 @@ def getTesterNameByID(ID):
 	return 'ERROR: NO TESTER NAME FOUND'
 
 def getCountryByTesterID(ID):
-	i = 0
 	for tester in  testers:
 		if(ID == int(tester[0])):
 			return tester[3]
-		else:
-			i += 1
 
-
+#print(getListOfTesterID())
 #print(getTesterByID(8))
 #print(getTesterNameByID(8))
 #print(getCountryByTesterID(8))

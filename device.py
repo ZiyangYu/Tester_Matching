@@ -17,5 +17,3 @@ def getDescripByDeviceID(ID):
 		if(ID == device[0]):
 			return device[1]
 	return 'ERROR: NO DEVICE FOUND'
-
-print(getDeviceIDByDescrip('iPhone 5'))
