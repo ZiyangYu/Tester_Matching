@@ -1,6 +1,7 @@
 import os
 import csv
 import testers
+import device
 
 with open('bugs.csv') as csvfile:
 	bugsReader = csv.reader(csvfile)
@@ -12,29 +13,39 @@ with open('bugs.csv') as csvfile:
 def getBugsByCriteria(Countries, Devices):
 	lBugs_Country = []
 	lBugs_Country_Device = []
-	#get a list of bug ID with required Countries
+
+	#get a list of bug with required Countries
 	if(Countries[0] == 'ALL'):
 		lBugs_Country = bugs
 	else :
 		for bug in bugs: 
-			bugTesterID = int(bug[2])
+			bugTesterCountry = testers.getCountryByTesterID(int(bug[2]))
 			for Country in Countries:
-				if(Country == testers.getCountryByTesterID(bugTesterID)):
+				if(Country == bugTesterCountry):
 					lBugs_Country.append(bug)
-	return lBugs_Country
 
-c = ['US','JP']
-e = ['JP']
-f = ['US']
-d = ['df']
-g = ['ALL']
+	#get a list of bug that matches both country and device criteria
+	for bug in lBugs_Country:
+		bugDevice = device.getDescripByDeviceID(bug[1])
+		for Device in Devices:
+			if(Device == bugDevice):
+				lBugs_Country_Device.append(bug)
 
-print(getBugsByCriteria(c,d))
-print(size)
-print(len(getBugsByCriteria(c,d)))
-print(len(getBugsByCriteria(e,d)))
-print(len(getBugsByCriteria(f,d)))
-print(len(getBugsByCriteria(g,d)))
+	return lBugs_Country_Device
+
+#c = ['US','JP']
+#e = ['JP']
+#f = ['US']
+#d = ['iPhone 4','iPhone 5']
+#h = ['iPhone 5']
+#g = ['ALL']
+
+#print(getBugsByCriteria(c,d))
+#print(size)
+#print(len(getBugsByCriteria(c,d)))
+#print(len(getBugsByCriteria(e,d)))
+#print(len(getBugsByCriteria(f,d)))
+#print(len(getBugsByCriteria(g,h)))
 
 
 

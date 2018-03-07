@@ -4,6 +4,7 @@ import testers
 import device
 
 def runTest_Matcher(Countries, Devices):
+	matchedBugs = bugs.getBugsByCriteria(Countries, Devices)
 	print(testers.getTesterByID(8))
 
 print(' ')

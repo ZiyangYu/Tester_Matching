@@ -7,12 +7,15 @@ with open('devices.csv') as csvfile:
 	size = len(devices)
 
 def getDeviceIDByDescrip(description):
-	i = 0
 	for device in devices:
-		if(description == devices[i][1]):
-			return devices[i][0]
-		else:
-			i+=1
+		if(description == device[1]):
+			return device[0]
+	return 'ERROR: NO DEVICE FOUND'
+
+def getDescripByDeviceID(ID):
+	for device in devices:
+		if(ID == device[0]):
+			return device[1]
 	return 'ERROR: NO DEVICE FOUND'
 
 print(getDeviceIDByDescrip('iPhone 5'))
