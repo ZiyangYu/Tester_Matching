@@ -2,12 +2,12 @@
 
 A simple matching program created by Ziyang Yu for Applause
 
-##Prerequisites
+## Prerequisites
 
 This program will run in python 3.
  Please make sure the virson of python 3 is currently being used on your machine
 
-##Running the Test Matcher
+## Running the Test Matcher
 
 On Mac:
 
@@ -21,36 +21,36 @@ python ./main.py
 
 After the welcome message, please enter the country code for the criteria, then hit Enter key
 
-####For a single country, please type the country code: US or JP or GB
+#### For a single country, please type the country code: US or JP or GB
 ```
 US
 ```
 
-####For multiple countries, please seperate country code by "," only, no space in between:
+#### For multiple countries, please seperate country code by "," only, no space in between:
 ```
 US,JP
 ```
 
-####For all countries, please type:
+#### For all countries, please type:
 ```
 ALL
 ```
 
 After the country criteria, please list the criteria for device(s)
 
-####For a single device, please type the device description eg: iPhone 4
+#### For a single device, please type the device description eg: iPhone 4
 ```
 iPhone 4
 ```
 
-####For multiple countries, please seperate devices by "," only, no space in between devices:
+#### For multiple countries, please seperate devices by "," only, no space in between devices:
 ```
 iPhone 5,HTC One
 ```
 
 After all the criterias are logged, the program will return the result.
 
-##Testing Result
+## Testing Result
 
 With one country, multiple devices:
 
