@@ -1,5 +1,6 @@
 """
-Main file to run the program
+Main file to run the program.
+Created by Ziyang Yu
 """
 import os
 import bugs
